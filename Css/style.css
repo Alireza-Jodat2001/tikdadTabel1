@@ -19,15 +19,18 @@
 .container {
   margin: 40px auto 0;
   padding: 0 15px; }
+  @media screen and (min-width: 750px) {
+    .container {
+      max-width: 900px; } }
 
 .filter {
-  padding: 0 15px; }
+  padding: 0 15px 15px; }
 
 .filter--bottom-box {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 5px; }
+  gap: 10px; }
   .filter--bottom-box > button {
     border: 0;
     background: none; }
@@ -58,20 +61,41 @@
       color: #aaa;
       font-size: 18px;
       transition: all 0.3s; }
+      @media screen and (max-width: 550px) {
+        .filter--bottom-box .search-field__input::placeholder {
+          font-size: 16px; } }
+    @media screen and (max-width: 550px) {
+      .filter--bottom-box .search-field__input {
+        font-size: 16px; } }
   .filter--bottom-box .search-field__button {
     height: 100%;
-    position: absolute;
     border: none;
+    position: absolute;
     background: none;
     cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
-    right: 10px;
-    top: 0; }
+    top: 0;
+    right: 10px; }
   .filter--bottom-box .search-field__icon {
     width: 25px;
     stroke: #aaa;
+    transition: all 0.3s; }
+
+.search-button {
+  height: 40px;
+  width: 40px;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--color-gray-light) !important;
+  border-radius: 6px; }
+  .search-button svg {
+    width: 25px;
+    stroke: #000;
     transition: all 0.3s; }
 
 .filter--top-box {
@@ -88,11 +112,16 @@
     border: 0;
     border-radius: 6px;
     font-size: 20px;
-    padding: 0 15px; }
+    padding: 0 15px;
+    flex: 1; }
+    @media screen and (max-width: 550px) {
+      .filter--top-box .top-box__button {
+        font-size: 16px; } }
   .filter--top-box .filter-active {
     background: var(--color-purple-primary);
     color: var(--color-white);
-    min-width: 150px; }
+    min-width: 150px;
+    flex: 2; }
     .filter--top-box .filter-active::before {
       content: "\002714";
       margin-left: 10px; }
@@ -114,6 +143,8 @@
   .tabel-container .tabel__th, .tabel-container .tabel__td:nth-child(2) {
     text-align: right;
     padding-right: 10px; }
+  .tabel-container .tabel__th:not(:nth-child(2)) {
+    text-align: center; }
   .tabel-container .tabel__td:first-child img {
     width: 27px;
     transform: translateY(4px); }
